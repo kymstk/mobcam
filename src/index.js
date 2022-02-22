@@ -136,10 +136,13 @@ document.getElementById("connect").addEventListener('click', () => {
 	}
 });
 
+// カメラが複数ある場合のために、選択肢を作成
 var setupCamselect = function (){
 	console.log('setupCamselect');
+	// カメラの使用許可を取得しないと返り値のカメラデバイスオブジェクトの label が空になるので、ダミーでカメラデバイスを取得
 	navigator.mediaDevices.getUserMedia({video:true, audio:false}).then((media) => {
 		console.log('setupCamselect', media);
+		// デバイスリストを取得して、そのうちカメラデバイスのみを選択リストに追加
 		navigator.mediaDevices.enumerateDevices().then((devices) => {
 			console.log('setupCamselect', devices);
 			devices.forEach((device) => {

@@ -1,10 +1,11 @@
 <html>
     <body>
     <video id="video" autoplay="" muted="" style="width: 640px; height: 480px; border: 1px solid black;"></video><br/>
-    <label></label><input type="radio" name="mode" value="sender"/>送信側</label>
-    <label></label><input type="radio" name="mode" value="recever"/>受信側</label>
+    <label></label><input type="radio" name="mode" id="sender"  value="sender"/>送信側</label>
+    <label></label><input type="radio" name="mode" id="recever" value="recever"/>受信側</label>
     <input id="keyword" type="text" style="width: 300px;"/>
-    <input type="button" id="connect" value="connect"/>
+    <input type="button" id="connect" value="connect"/><br/>
+    <select id="camselect" style="visibility:hidden"></select>
     </body>
     <script type="module" src="./bundle.js"></script>
 </html>
